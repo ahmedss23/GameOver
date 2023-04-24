@@ -1,0 +1,28 @@
+<div class="container pt-5 px-5">
+  <div class="row">
+    <div class="col-6 px-0">
+      <img [src]="gamingImage" alt="Gaming Image" class="w-100 h-100">
+    </div>
+    <div class="col-6 px-0 bg-light">
+      <div class="p-5 text-center">
+        <img [src]="gameOverLogo" alt="GameOver Logo" height="72">
+        <h1 class="text-secondary h4 pt-2 pb-3">Log in to GameOver</h1>
+        <form [formGroup]="loginForm" (submit)="handleLogin()">
+          <div class="col-12 mb-3">
+            <input type="email" placeholder="Email" formControlName="email" class="form-control">
+          </div>
+          <div class="col-12 mb-3">
+            <input type="password" placeholder="Password" formControlName="password" class="form-control">
+          </div>
+          <div *ngIf="APIError" class="alert alert-danger">{{APIError}}</div>
+          <div class="col-12">
+            <input type="submit" value="Login" class="form-control btn btn-light" [disabled]="isLoading">
+          </div>
+        </form>
+        <hr class="border" style="border-width: 0.1px !important">
+        <a href="#" class="text-info text-decoration-none small">Forgot Password?</a>
+        <p class="text-secondary">Not a member yet? <a href="#" class="text-info text-decoration-none small" routerLink="/register">Create Account <i class="fas fa-chevron-right small"></i></a></p>
+      </div>
+    </div>
+  </div>
+</div>

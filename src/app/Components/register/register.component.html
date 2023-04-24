@@ -1,0 +1,68 @@
+<div class="container pt-5 px-5">
+  <div class="row">
+    <div class="col-6 px-0">
+      <img [src]="gamingImage" alt="Gaming Image" class="w-100 h-100">
+    </div>
+    <div class="col-6 px-0 bg-light">
+      <div class="p-5 text-center">
+        <img [src]="gameOverLogo" alt="GameOver Logo" height="72">
+        <h1 class="text-secondary h4 pt-2 pb-3">Create My Account!</h1>
+        <form [formGroup]="registerForm" (submit)="handleRegister()" class="row">
+          <div class="col-6 mb-3">
+            <input type="text" placeholder="First Name" formControlName="first_name" class="form-control">
+            <div *ngIf="registerForm.get('first_name')?.errors && registerForm.get('first_name')?.touched" class="alert alert-danger mt-2">
+              <p *ngIf="registerForm.get('first_name')?.getError('APIError')" class="m-0">{{registerForm.get('first_name')?.getError('APIError')}}</p>
+              <p *ngIf="registerForm.get('first_name')?.getError('minlength')" class="m-0">First Name minLength is 5</p>
+              <p *ngIf="registerForm.get('first_name')?.getError('required')" class="m-0">First Name is Required</p>
+            </div>
+          </div>
+
+          <div class="col-6 mb-3">
+            <input type="text" placeholder="Last Name" formControlName="last_name" class="form-control">
+            <div *ngIf="registerForm.get('last_name')?.errors && registerForm.get('last_name')?.touched" class="alert alert-danger mt-2">
+              <p *ngIf="registerForm.get('last_name')?.getError('APIError')" class="m-0">{{registerForm.get('last_name')?.getError('APIError')}}</p>
+              <p *ngIf="registerForm.get('last_name')?.getError('minlength')" class="m-0">Last Name minLength is 5</p>
+              <p *ngIf="registerForm.get('last_name')?.getError('required')" class="m-0">Last Name is Required</p>
+            </div>
+          </div>
+
+          <div class="col-12 mb-3">
+            <input type="email" placeholder="Email" formControlName="email" class="form-control">
+            <div *ngIf="registerForm.get('email')?.errors && registerForm.get('email')?.touched" class="alert alert-danger mt-2">
+              <p *ngIf="registerForm.get('email')?.getError('APIError')" class="m-0">{{registerForm.get('email')?.getError('APIError')}}</p>
+              <p *ngIf="registerForm.get('email')?.getError('email')" class="m-0">Enter a valid email</p>
+              <p *ngIf="registerForm.get('email')?.getError('required')" class="m-0">Email is Required</p>
+            </div>
+          </div>
+
+          <div class="col-12 mb-3">
+            <input type="number" placeholder="Age" formControlName="age" class="form-control">
+            <div *ngIf="registerForm.get('age')?.errors && registerForm.get('age')?.touched" class="alert alert-danger mt-2">
+              <p *ngIf="registerForm.get('age')?.getError('APIError')" class="m-0">{{registerForm.get('age')?.getError('APIError')}}</p>
+              <p *ngIf="registerForm.get('age')?.getError('min')" class="m-0">Min Age is 18</p>
+              <p *ngIf="registerForm.get('age')?.getError('required')" class="m-0">Age is Required</p>
+            </div>
+          </div>
+
+          <div class="col-12 mb-3">
+            <input type="password" placeholder="Password" formControlName="password" class="form-control">
+            <div *ngIf="registerForm.get('password')?.errors && registerForm.get('password')?.touched" class="alert alert-danger mt-2">
+              <p *ngIf="registerForm.get('password')?.getError('APIError')" class="m-0">{{registerForm.get('password')?.getError('APIError')}}</p>
+              <p *ngIf="registerForm.get('password')?.getError('pattern')" class="m-0">Only A-Z a-z 0-9 are allowed, minLenght is 2 and must start with a capital letter</p>
+              <p *ngIf="registerForm.get('password')?.getError('required')" class="m-0">Password is Required</p>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <input type="submit" value="Create Account" class="form-control mb-1 btn btn-light" [disabled]="isLoading">
+          </div>
+          <p class="small text-secondary">
+            This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+          </p>
+        </form>
+        <hr class="border" style="border-width: 0.1px !important">
+        <p class="text-secondary">Already a member? <a href="#" class="text-info text-decoration-none small" routerLink="/login">Log In <i class="fas fa-chevron-right small"></i></a></p>
+      </div>
+    </div>
+  </div>
+</div>

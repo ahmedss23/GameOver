@@ -1,0 +1,11 @@
+#home {
+  background: url('../../../assets/images/paladins.b44d33d6e7ee1ba8.png');
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+button:hover {
+  color: white !important;
+  background-color: rgb(var(--bs-secondary-rgb));
+}

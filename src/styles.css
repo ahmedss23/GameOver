@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --bs-primary-rgb: 39, 43, 48;
+  --bs-primary-rgb: 39, 43, 48;
+  --bs-light-rgb: 50, 56, 62;
+  --bs-dark-rgb: 28, 30, 34;
+  --bs-info-rgb: 71, 153, 235;
+}
+
+.btn-light {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #3a3f44;
+  --bs-btn-border-color: #22241d;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #3a3f44;
+  --bs-btn-hover-border-color: #22241d;
+}
+
+.btn-info {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #4799EB;
+  --bs-btn-border-color: #22241d;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #4799EB;
+  --bs-btn-hover-border-color: #22241d;
+}
+
+body {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-primary-rgb),var(--bs-bg-opacity)) !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

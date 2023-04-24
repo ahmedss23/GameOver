@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-lg bg-primary shadow">
+  <div class="container">
+    <a class="navbar-brand text-white" href="#" routerLink="/">
+      <img [src]="gameOverLogo" alt="GameOver Logo" width="70">Game Over
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 ms-4 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-secondary" routerLink="home" >Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-secondary" [routerLink]="['/games', 'all', '']">All</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link text-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Platforms
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" [routerLink]="['/games', 'platform', 'pc']">PC</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/games', 'platform', 'browser']">Browser</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link text-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Sort By
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" [routerLink]="['/games', 'sort-by', 'release-date']">Release Date</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/games', 'sort-by', 'popularity']">Popularity</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/games', 'sort-by', 'alphabetical']">Alphapetical</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/games', 'sort-by', 'relevance']">Relevance</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link text-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Categories
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" [routerLink]="['/games', 'category', 'racing']">Racing</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/games', 'category', 'sports']">Sports</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/games', 'category', 'social']">Social</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/games', 'category', 'shooter']">Shooter</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/games', 'category', 'open-world']">Open World</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/games', 'category', 'zombie']">Zombie</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/games', 'category', 'fantasy']">Fantasy</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/games', 'category', 'action-rpg']">Action RPG</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/games', 'category', 'action']">Action</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/games', 'category', 'flight']">Flight</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/games', 'category', 'battle-royale']">Battle Royale</a></li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li *ngIf="!isLoggedIn" class="nav-item m-2">
+          <a class="nav-link text-secondary" routerLink="/login" href="#">Login</a>
+        </li>
+        <li *ngIf="!isLoggedIn" class="nav-item m-2">
+          <a class="nav-link btn px-3" routerLink="/register" href="#">Join Free</a>
+        </li>
+        <li *ngIf="isLoggedIn" class="nav-item" (click)="logout()">
+          <span class="nav-link btn px-3">Logout</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

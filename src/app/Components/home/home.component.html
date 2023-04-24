@@ -1,0 +1,25 @@
+<section class="bg-dark">
+  <div class="container text-center p-5 text-white-50" id="home">
+    <h1>
+      Find & track the best <span class="text-info">free-to-play</span> games!
+    </h1>
+    <p class="fs-5">Track what you've played and search for what to play next! Plus get free premium loot!</p>
+    <button class="btn border border-secondary text-white-50 mb-4">Browse Games</button>
+  </div>
+</section>
+<section>
+  <div class="container text-white-50 p-5">
+    <h3><i class="fas fa-robot"></i> Personalized Recommendations</h3>
+    <div class="row mt-5">
+      <div *ngFor="let game of games" class="col-md-4 cursor-pointer" [routerLink]="['/game-details/', game.id]">
+        <div class="card border-0 rounded-0 bg-light">
+          <img [src]="game.thumbnail" class="card-img-top" [alt]="game.title">
+          <div class="card-body d-flex justify-content-between">
+            <h3 class="card-text">{{game.title}}</h3>
+            <span class="btn btn-info rounded m-0"> Free </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
